@@ -1,0 +1,107 @@
+.main .hot {
+  position: absolute;
+  width: 56px;
+  height: 64px;
+}
+
+.active {
+  border: 1px solid red;
+}
+
+.main .hot .title {
+  position: absolute;
+  width: 56px;
+  text-align: center;
+  font-size: 10px;
+  user-select: none;
+  color: white;
+}
+
+.main .hot .text {
+  position: absolute;
+  top: -30px;
+  left: -28px;
+  width: 112px;
+  font-size: 10px;
+  color: black;
+  display: none;
+}
+
+.arrow {
+  background-image: url(./resources/arrow.png);
+  background-size: cover;
+  position: absolute;
+}
+
+/* ahead1和ahead2一起组成箭头直线向前动画 */
+.ahead1 {
+  width: 56px;
+  height: 34px;
+  top: 30px;
+  animation: 1.5s ahead infinite;
+  animation-delay: 0.75s;
+}
+
+.ahead2 {
+  width: 56px;
+  height: 34px;
+  top: 30px;
+  animation: 1.5s ahead infinite;
+}
+
+/* 单箭头左转动画 */
+.turnleft {
+  width: 56px;
+  height: 34px;
+  animation: 2s turnleft infinite;
+}
+
+/* 单箭头右转动画 */
+.turnright {
+  position: absolute;
+  width: 56px;
+  height: 34px;
+  animation: 2s turnright infinite;
+}
+
+/* conturnleft1和conturnleft2一起组成多箭头持续左转动画 */
+.conturnleft1 {
+  position: absolute;
+  width: 56px;
+  height: 34px;
+  top: 20px;
+  animation: 2s conturnleft infinite;
+}
+
+.conturnleft2 {
+  position: absolute;
+  width: 56px;
+  height: 34px;
+  top: 20px;
+  animation: 2s conturnleft infinite;
+  animation-delay: 1s;
+}
+
+/* point和ring一起组成点扩散动画 */
+
+/* 圆心向外扩散 */
+.point {
+  position: absolute;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background: #3399ff;
+  animation: 1s warn infinite;
+}
+
+/* 圆环变大变小 */
+.ring {
+  position: absolute;
+  height: 15px;
+  width: 15px;
+  left: 19px;
+  top: 19px;
+  border: solid 1px #A07D7D;
+  border-radius: 100%;
+  animation: 1s bigger infinite;
+}

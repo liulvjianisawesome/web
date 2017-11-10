@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Draw quad with texture</title>
+  <script src="./lib/webgl-utils.js"></script>
+  <script src="./lib/webgl-debug.js"></script>
+  <script src="./lib/cuon-utils.js"></script>
+  <script src="./lib/cuon-matrix.js"></script>
+  <link href="hot.css" rel="stylesheet" type="text/css" />
+  <link href="animation.css" rel="stylesheet" type="text/css" />
+  <style>
+    li {
+      list-style: none;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .sideMenu {
+      width: 80px;
+      height: 750px;
+      background-color: rgb(51, 51, 51);
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      font-size: 14px;
+      color: #ccc;
+    }
+
+    .sideMenu .menu {
+      min-width: 60px;
+      margin-top: 25px;
+    }
+
+    .options {
+      width: 190px;
+      height: 750px;
+      background-color: rgb(51, 51, 51);
+      display: flex;
+      flex-direction: column;
+      color: white;
+      text-align: center;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    .options .title {
+      margin-top: 20px;
+    }
+
+    .options .icons {
+      display: flex;
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .options .icons img {
+      width: 30px;
+      height: 30px;
+    }
+
+    .options input {
+      margin-top: 15px;
+      height: 22.5px;
+    }
+
+    .options .singleSelect {
+      margin-top: 20px;
+    }
+
+    .options .singleSelect .value {
+      border: 1px solid white;
+      width: 170px;
+      height: 35px;
+      font-size: 13px;
+      text-align: left;
+      line-height: 35px;
+      padding-left: 20px;
+    }
+
+    .options .singleSelect .items {
+      display: none;
+      padding-left: 10px;
+      padding-right: 10px;
+      width: 172px;
+      height: 105px;
+      background-color: white;
+      border-radius: 3.5px;
+      color: black;
+    }
+
+    .options .singleSelect .items li {
+      text-align: left;
+      font-size: 13px;
+      height: 35px;
+      line-height: 35px;
+      border-top: 1px solid #ccc;
+    }
+
+    .main {
+      position: relative;
+      overflow: hidden;
+      height: 750px;
+    }
+  </style>
+</head>
+
+<body onload="main()" data-infos=<%= infos %>>
+  <div class="container">
+    <!-- 左边栏 -->
+    <div class="sideMenu">
+      <div class="menu">
+        视角
+      </div>
+      <div class="menu" style="color: rgb(118, 107, 210)">
+        热点
+      </div>
+      <div class="menu">
+        音乐
+      </div>
+      <div class="menu">
+        特效
+      </div>
+      <div class="menu">
+        沙盘
+      </div>
+      <div class="menu">
+        视角
+      </div>
+    </div>
+
+    <!-- 中间显示区域 -->
+    <div class="main">
+      <canvas width="1600" height="750">
+        Please use a browser that supports "canvas"
+      </canvas>
+    </div>
+
+    <!-- 右边栏 -->
+    <div class="options">
+      <div class="title">添加热点</div>
+      <div class="icons">
+        <img src="./resources/icon1.jpg" data-aniType="ahead" />
+        <img src="./resources/icon2.jpg" data-aniType="turnleft" />
+        <img src="./resources/icon3.jpg" data-aniType="turnright" />
+        <img src="./resources/icon4.jpg" data-aniType="conturnleft" />
+        <img src="./resources/icon5.jpg" data-aniType="diffusion" />
+      </div>
+
+      <div class="title">热点标题</div>
+      <input class="text">
+
+      <div class="title">热点类型</div>
+      <div class="singleSelect">
+        <div class="value">选择热点类型</div>
+        <ul class="items">
+          <li style="border-top: 0">切换</li>
+          <li>文本</li>
+          <li>链接</li>
+        </ul>
+      </div>
+      <input class="type_value">
+
+      <div class="title" style="margin-top: 100px;">
+        <button class="finish">完成</button>
+        <button class="delete">删除</button>
+        <button class="preview">预览</button>
+      </div>
+    </div>
+  </div>
+  <script src="panorama.js"></script>
+</body>
+
+</html>
