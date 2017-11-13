@@ -8,7 +8,7 @@ app.set('views', path.join(__dirname, 'views')) // 设置存放模板文件的�
 app.set('view engine', 'ejs') // 设置模板引擎为ejs
 
 app.get('/', function (req, res) {
-  var id = req.query.autoid || 6058
+  var id = req.query.autoid
   var panoUrl = req.query.url || '1.jpg'
 
   console.log(id, panoUrl)
