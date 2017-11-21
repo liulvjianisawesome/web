@@ -9,9 +9,11 @@ app.set('view engine', 'ejs') // 设置模板引擎为ejs
 
 app.get('/', function (req, res) {
   var id = req.query.autoid
-  var panoUrl = "http://ceecd014.sz.ue.net.cn" + req.query.attachment
+  var attachment = req.query.attachment
+  var panoUrl = "http://ceecd014.sz.ue.net.cn" + attachment
 
   console.log(id, panoUrl)
+  console.log(attachment.split('/'))
 
   app.get('/index', function (req, res) {
     res.render('index', {
