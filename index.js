@@ -14,8 +14,9 @@ app.get('/', function (req, res) {
 
   console.log(id, panoUrl)
   console.log(attachment.split('/'))
+  var key = attachment.split('/')[4]
 
-  app.get('/index', function (req, res) {
+  app.get('/' + key, function (req, res) {
     res.render('index', {
       infos: `{"curInfoIndex":0,"allInfos":[{"panoUrl":"${panoUrl}"}]}`,
     })
@@ -23,7 +24,7 @@ app.get('/', function (req, res) {
 
   res.render('json', {
     autoid: id,
-    url: 'http://119.23.212.236:3000/index'
+    url: 'http://119.23.212.236:3000/' + key
   })
 })
 
