@@ -9,7 +9,7 @@ app.set('view engine', 'ejs') // 设置模板引擎为ejs
 
 app.get('/', function (req, res) {
   var id = req.query.autoid
-  var panoUrl = req.query.url || '1.jpg'
+  var panoUrl = "http://ceecd014.sz.ue.net.cn" + req.query.attachment
 
   console.log(id, panoUrl)
 
