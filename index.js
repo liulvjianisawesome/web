@@ -21,7 +21,7 @@ app.get('/', function (req, res) {
 
   res.render('json', {
     autoid: id,
-    url: 'http://119.23.212.236:3000/index'
+    url: '119.23.212.236:3000/index'
   })
 })
 
